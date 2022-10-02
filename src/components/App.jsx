@@ -18,7 +18,8 @@ export class App extends Component {
   };
 
   countTotalFeedback = ({ good, neutral, bad } = this.state) => {
-    const total = good + neutral + bad;
+    const feedbackValues = Object.values(this.state);
+    const total = feedbackValues.reduce((acc, value) => acc + value, 0);
     return total;
   };
 
