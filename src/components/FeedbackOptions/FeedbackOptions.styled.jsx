@@ -27,6 +27,8 @@ export const Button = styled.button`
   border: 2px solid ${btnColor};
   border-radius: 8px;
 
+  cursor: pointer;
+
   transition: 0.2s ease-in-out;
 
   :before {
