@@ -9,15 +9,12 @@ export class App extends Component {
 
   incrementFeedback = e => {
     const stateKey = e.currentTarget.dataset.set;
-    console.log('stateKey', stateKey);
-    console.log('prevState', this.state);
+
     this.setState(prevState => {
       return {
         [stateKey]: prevState[stateKey] + 1,
       };
     });
-
-    console.log('state', this.state);
   };
 
   countTotalFeedback = ({ good, neutral, bad } = this.state) => {

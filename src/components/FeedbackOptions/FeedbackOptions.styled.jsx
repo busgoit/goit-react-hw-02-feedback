@@ -1,15 +1,31 @@
 import styled from '@emotion/styled';
 
+const btnColor = props => {
+  switch (props['data-set']) {
+    case 'good':
+      return 'green';
+    case 'neutral':
+      return 'orange';
+    case 'bad':
+      return 'red';
+    default:
+      return 'black';
+  }
+};
+
 export const Button = styled.button`
   display: inline-block;
   padding: 5px 20px;
   margin: 0 10px;
   position: relative;
   overflow: hidden;
-  border: 2px solid green;
-  border-radius: 8px;
-  color: green;
+
+  color: ${btnColor};
+
   background-color: #fff;
+
+  border: 2px solid ${btnColor};
+  border-radius: 8px;
 
   transition: 0.2s ease-in-out;
 
@@ -29,7 +45,7 @@ export const Button = styled.button`
   }
 
   :hover {
-    background: green;
+    background: ${btnColor};
     color: #fff;
   }
 
